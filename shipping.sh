@@ -6,7 +6,7 @@ appname=shipping
  app_setup
  maven_setup
  system_setup
- m
+ 
 echo "Please enter root password to setup"
 read -s MYSQL_ROOT_PASSWORD
 
