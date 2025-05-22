@@ -85,15 +85,29 @@ VALIDATE $? "Installing Dependencies"
 
 }
 
-# print_time(){
-    # END_TIME=$( date +%s )
-# TOTAL_TIME=$(($END_TIME - $START_TIME))
-# 
-# echo -e "Script exection completed successfully, $Y time taken: $TOTAL_TIME seconds $N" | tee -a $LOG_FILE
-# }
-# 
-# 
 
+ maven_setup(){
+    dnf install maven -y &>>$LOG_FILE
+VALIDATE $? "Installing Maven and Java"
+
+mvn clean package  &>>$LOG_FILE
+VALIDATE $? "Packaging the shipping application"
+
+mv target/shipping-1.0.jar shipping.jar  &>>$LOG_FILE
+VALIDATE $? "Moving and renaming Jar file"
+ }
+
+python_setup(){
+
+     dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+    VALIDATE $? "Install Python3 packages"
+
+    pip3 install -r requirements.txt &>>$LOG_FILE
+    VALIDATE $? "Installing dependencies"
+
+    cp $SCRIPT_DIR/payment.service /etc/systemd/system/payment.service &>>$LOG_FILE
+    VALIDATE $? "Copying payment service"
+}
 
 
 
