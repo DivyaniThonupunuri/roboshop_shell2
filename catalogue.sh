@@ -6,8 +6,8 @@ appname=catalogue
 
 #list of functions calling from common.sh
 root_check
-nodejs_setup
 app_setup
+nodejs_setup
 system_setup
 
 
