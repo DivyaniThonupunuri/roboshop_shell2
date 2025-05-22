@@ -15,7 +15,7 @@ VALIDATE $? "Enabling MySQL"
 systemctl start mysqld   &>>$LOG_FILE
 VALIDATE $? "Starting MySQL"
 
-mysql_secure_installation --set-root-pass $MYSQL_ROOT_PASSWORD &>>$LOG_FILE
+mysql_secure_installation --set-root-pass roboshop@1 &>>$LOG_FILE
 VALIDATE $? "Setting MySQL root password"
 
 END_TIME=$(date +%s)
