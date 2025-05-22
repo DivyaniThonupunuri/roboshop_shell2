@@ -26,5 +26,5 @@ VALIDATE $? "Enabling Redis"
 systemctl start redis  &>>$LOG_FILE
 VALIDATE $? "Started Redis"
 
-#print_time
+
 
