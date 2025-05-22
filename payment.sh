@@ -2,7 +2,7 @@
 #!/bin/bash
 
 source ./common.sh
-app_name=payment
+appname=payment
 
 root_check
 app_setup 
