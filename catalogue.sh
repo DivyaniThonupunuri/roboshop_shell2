@@ -7,8 +7,8 @@ appname=catalogue
 #list of functions calling from common.sh
 root_check
 app_setup
-nodejs_setup
 system_setup
+nodejs_setup
 
 
 cp $SCRIPT_DIR/mongodb.repo /etc/yum.repos.d/mongodb.repo 
